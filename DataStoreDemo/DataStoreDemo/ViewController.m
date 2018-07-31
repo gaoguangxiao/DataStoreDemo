@@ -51,6 +51,7 @@
 - (void)openDatabase {
     //1.设置文件名
     NSString *filename = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"person.db"];
+    NSLog(@"%@",filename);
     //2.打开数据库文件，如果没有会自动创建一个文件
     NSInteger result = sqlite3_open(filename.UTF8String, &_sqlite3);
     if (result == SQLITE_OK) {
